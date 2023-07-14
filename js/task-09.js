@@ -5,13 +5,17 @@ function getRandomHexColor() {
 }
 
 const body = document.querySelector('body');
-const color = document.querySelector('.color');
+const colorValue = document.querySelector('.color');
+const color = getRandomHexColor();
 const changeColorBtn = document.querySelector(".change-color");
-color.textContent = "#fafafa";
+
+colorValue.textContent = `${color}`;
+body.style.backgroundColor = colorValue.textContent;
+
 changeColorBtn.addEventListener('click', changeColor);
 
 function changeColor() {
-  body.style.backgroundColor = getRandomHexColor();
-  color.textContent = `${getRandomHexColor()}`;
+  colorValue.textContent = `${getRandomHexColor()}`;
+  body.style.backgroundColor = colorValue.textContent;
 }
 
